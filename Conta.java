@@ -1,8 +1,8 @@
 public class Conta {
     private double saldo;
-    int agencia;
-    int numero;
-    Cliente titular;
+    private int agencia; // não pode ser negativo
+    private int numero; // não pode ser negativo
+    private Cliente titular;
 
     public void depositaSaldo(double valor) {
         this.saldo += valor;
@@ -19,11 +19,37 @@ public class Conta {
         else if(valor < 0) {
             System.out.println("Você inseriou um valor invalido para sacar");
             return false;
-
         }
         else {
             System.out.println("Impossivel sacar esse valor da sua conta pois ele eh superior ao seu saldo");
             return false;
         }
     }
+
+    public double getSaldo(){
+        return this.saldo;
+    }
+
+    public int getAgencia() {
+        return this.agencia;
+    }
+
+    // Número da conta no Banco
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero
+    }
+    // Titulares do banco
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
+
 }
