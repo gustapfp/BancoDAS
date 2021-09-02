@@ -1,7 +1,8 @@
-public class Cliente {
+public class Cliente implements Autenticavel {
     private String nome;
     private String cpf;
     private String endereco;
+    private int senha;
 
     // CPF do cliente
     public String getCpf() {
@@ -25,5 +26,22 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    // Metodos da Herança
+
+    @Override
+    public void setSenha(int senha) {
+        this.senha = senha;
+    }
+
+    @Override
+    public boolean autentifica(int senha) {
+        if(this.senha == senha) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
